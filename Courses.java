@@ -17,7 +17,17 @@ public class Courses {
     // Return the average marks in the given courses
     public double averageSomeCourses(Set<String> courseNames) {
         // Complete this method
-        return 0;
+        Double totalMarks = 0.0;
+        double avgMarks = 0.0;
+        int count = 0;
+         Iterator iterator = courseNames.iterator();
+        while(iterator.hasNext()){
+            String elem = (String) iterator.next();
+            totalMarks += this.courseMarks.get(elem);
+            count++;
+        }
+        avgMarks = totalMarks / Double.valueOf(count);
+        return avgMarks;
     }
 
     public void print() {
